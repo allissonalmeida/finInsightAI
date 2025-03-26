@@ -19,4 +19,24 @@ Esta seção deve conter no mínimo 4 cenários (2 de cada tipo indicado), cuja 
 
 [Esta é uma tradução do Cenário do Artigo de John Carroll:] Harry está interessado em problemas com pontes; quando criança, ele viu uma pequena ponte desabar quando seus apoios foram minados após uma forte chuva. Ele abre o estudo de caso da Ponte Tacoma Narrows e pede para ver o filme de quando ela desmoronou. Ele fica chocado ao ver a ponte primeiro balançar, depois ondular e, por fim, se desprender. Ele rapidamente reproduz o filme e, em seguida, abre o módulo do curso associado a movimento harmônico. Ele navega pelo material do curso (sem fazer os exercícios), salva o trecho do filme em seu caderno com uma anotação em áudio e, em seguida, faz uma consulta em linguagem natural para encontrar referências a outras manifestações físicas do movimento harmônico. Aí, ele passa para um estudo de caso envolvendo flautas e pícolos
 
-# 
+# Cenário Positivo 2
+[Coloque aqui o seu segundo cenário que dá certo]
+
+# Cenário Negativo 1 (i.e. cenário que expõe uma limitação conhecida e esperada do programa)
+[Vou usar aqui uma variante do cenário de Carroll para ilustrar o que é um cenário negativo:] Harry está interessado em problemas com pontes; quando criança, ele viu uma pequena ponte desabar quando seus apoios foram minados após uma forte chuva. Ele abre o estudo de caso da Ponte Tacoma Narrows e pede para ver o filme de quando ela desmoronou. Porém, ao invés de aparecer um vídeo do acidente com aquela ponte, aparece uma tela com uma mensagem do reprodutor. Ele não entende muito bem a mensagem, mas parece que há uma configuração especial que ele tem que fazer no browser dele para que o vídeo seja reproduzido. Ele tenta fazer o que é indicado, mas não tem resultado positivo. Desanimado, ele desiste de ver aquele vídeo e procura outro exemplo para seu estudo sobre movimento harmônico.
+
+
+# Cenário Negativo 2
+[Coloque aqui o seu segundo cenário que expõe uma outra limitação do seu programa, ou um aspecto diferente da anterior, que não aparece no cenário negativo 1]
+
+# Documentação Técnica do Projeto
+Esta seção da Wiki se destina a pessoas que queiram reutilizar, total ou parcialmente, o seu programa. Portanto, ofereça todas as informações necessárias. Os três itens a seguir são os mais utilizados. Escolha com o(a) orientador(a) do projeto quais destes itens devem ser incluídos. Para cada item incluído, crie uma seção específica.
+
+Especificação de requisitos funcionais e não-funcionais do sotware
+Descrição ou modelo de arquitetura, dados, semântica ou outra dimensão relevante do software
+Descrição ou modelo funcional do software
+Sobre o código (detalhes da linguagem ou da técnica de programação utilizada, da estratégia de comentários em linha, das diretivas de compilação, se houver, etc.)
+Manual de Utilização para Usuários Contemplados
+O manual de utilização deve ser elaborado para todos os tipos de usuários contemplados. Deve também ser consistente com todo o restante do conteúdo da Wiki, o que inclui descrição, cenários e documentação técnica.
+
+O formato mais prático para a elaboração de um manual de uso é seguir a estrutura sugerida a seguir, para cada tarefa que o usuário pode realizar (o que envolve usar várias funções) e para cada função básica que o programa oferece:

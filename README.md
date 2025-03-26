@@ -40,3 +40,33 @@ Manual de Utilização para Usuários Contemplados
 O manual de utilização deve ser elaborado para todos os tipos de usuários contemplados. Deve também ser consistente com todo o restante do conteúdo da Wiki, o que inclui descrição, cenários e documentação técnica.
 
 O formato mais prático para a elaboração de um manual de uso é seguir a estrutura sugerida a seguir, para cada tarefa que o usuário pode realizar (o que envolve usar várias funções) e para cada função básica que o programa oferece:
+
+
+{ 
+  Guia de Instruções:
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Para [Tarefa A: por exemplo, no cenário usado, BUSCAR VÍDEO] faça:
+  Passo 1: ...
+  Passo 2: ...
+  ...
+  Passo N: ...
+
+  >>> Se houver diferentes maneiras de realizar a Tarefa A, descreva cada uma delas.
+  >>> E se em certos contextos, uma alternativa for melhor que outra, informe e explique.
+
+  Exceções ou potenciais problemas:
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Se [Condição Prevista C1: por exemplo, o vídeo for encontrado mas o link está 'quebrado']
+     {
+     Então faça: [Passo 1, Passo 2, ..., Passo N] 
+     ou
+     É porque: [explique o problema, se não há uma sugestão para solucionar] 
+     } 
+  
+  Se [Condição Prevista C2: ... 
+  ...
+  Se [Condição Prevista CN: ...      
+}
+
+>>> Repita a estrutura do Guia acima para cada tarefa e função básica.
+

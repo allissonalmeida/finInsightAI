@@ -7,21 +7,22 @@ O FinInsight AI é uma plataforma de análise automatizada de relatórios financ
 
 # Visão de Projeto
 
-Esta seção deve conter no mínimo 4 cenários (2 de cada tipo indicado), cuja função é orientar não apenas o projeto do software, mas também o seu uso e eventual evolução. No caso de projeto, os cenários expressam a INTENÇÃO DO CRIADOR, funcionando como uma bússola para manter ou corrigir rumos. Os cenários podem ser continuamente revisados, a fim de que ao final do projeto estejam em plena sintonia com o que o programa é, faz e não faz. No caso de uso, os cenários orientam a INTERPRETAÇÃO DO USUÁRIO ao interagir com o programa, permitindo que possa julgar se está fazendo um uso esperado ou inesperado do programa, o que ajuda muito a decidir o que fazer em casos de eventuais erros de interação ou execução. Finalmente, no caso de evolução do programa, os cenários ORIENTAM PROGRAMADORES COLABORADORES a como, quando e se reutilizar e modificar o programa para novas finalidades ou condições.
-
 # Cenário Positivo 1 (i.e. cenário que dá certo)
 
-[Esta é uma tradução do Cenário do Artigo de John Carroll:] Harry está interessado em problemas com pontes; quando criança, ele viu uma pequena ponte desabar quando seus apoios foram minados após uma forte chuva. Ele abre o estudo de caso da Ponte Tacoma Narrows e pede para ver o filme de quando ela desmoronou. Ele fica chocado ao ver a ponte primeiro balançar, depois ondular e, por fim, se desprender. Ele rapidamente reproduz o filme e, em seguida, abre o módulo do curso associado a movimento harmônico. Ele navega pelo material do curso (sem fazer os exercícios), salva o trecho do filme em seu caderno com uma anotação em áudio e, em seguida, faz uma consulta em linguagem natural para encontrar referências a outras manifestações físicas do movimento harmônico. Aí, ele passa para um estudo de caso envolvendo flautas e pícolos
+Ana, analista sênior em um banco de investimento, precisa identificar tendências no setor de energia renovável. Ela carrega 20 relatórios trimestrais de empresas do setor no FinInsight AI. O sistema extrai automaticamente dados como CAPEX em biomassa e menções a "transição energética" nos textos. Usando RAG, cruza essas informações com dados do setor armazenados em sua base. Em minutos, o dashboard gera um relatório destacando um crescimento de 12% em investimentos em biomassa, correlacionado com menções a "novos contratos de transporte de vinhaça". Ana exporta o gráfico interativo para sua apresentação ao conselho.
 
 # Cenário Positivo 2
-[Coloque aqui o seu segundo cenário que dá certo]
+
+Carlos, consultor de riscos, investiga a exposição de clientes a flutuações cambiais. O FinInsight AI identifica, em 50 relatórios, trechos como "hedge cambial insuficiente" e calcula automaticamente a proporção de dívidas em moeda estrangeira. Um alerta automático sinaliza 3 empresas com discrepâncias acima de 15% entre dados tabulares e descrições textuais. Carlos usa a função de "linha do tempo" para rastrear menções a "contingências cambiais" nos últimos 8 trimestres, encontrando padrões sazonais.
 
 # Cenário Negativo 1 (i.e. cenário que expõe uma limitação conhecida e esperada do programa)
-[Vou usar aqui uma variante do cenário de Carroll para ilustrar o que é um cenário negativo:] Harry está interessado em problemas com pontes; quando criança, ele viu uma pequena ponte desabar quando seus apoios foram minados após uma forte chuva. Ele abre o estudo de caso da Ponte Tacoma Narrows e pede para ver o filme de quando ela desmoronou. Porém, ao invés de aparecer um vídeo do acidente com aquela ponte, aparece uma tela com uma mensagem do reprodutor. Ele não entende muito bem a mensagem, mas parece que há uma configuração especial que ele tem que fazer no browser dele para que o vídeo seja reproduzido. Ele tenta fazer o que é indicado, mas não tem resultado positivo. Desanimado, ele desiste de ver aquele vídeo e procura outro exemplo para seu estudo sobre movimento harmônico.
+
+Uma gestora tenta analisar relatórios de uma empresa com PDFs digitalizados em baixa resolução. O OCR do sistema falha na extração de tabelas críticas de endividamento, retornando valores distorcidos. Embora o módulo qualitativo identifique menções a "reestruturação de dívidas", a falta de dados estruturados impede a geração de insights integrados. O sistema emite um alerta técnico, mas a usuária precisa solicitar versões nativas dos PDFs ao departamento jurídico, atrasando sua análise em 48 horas.
 
 
 # Cenário Negativo 2
-[Coloque aqui o seu segundo cenário que expõe uma outra limitação do seu programa, ou um aspecto diferente da anterior, que não aparece no cenário negativo 1]
+
+Um analista júnior insere um relatório com notas explicativas em espanhol, esperando análise profunda. O sistema, treinado principalmente em português, traduz automaticamente o texto, mas perde nuances técnicas específicas do mercado argentino. A ferramenta RAG recupera dados desatualizados de um banco de dados em português, levando a recomendações equivocadas sobre exposição ao risco-país. O usuário só percebe o erro ao comparar manualmente os resultados com fontes secundárias.
 
 # Documentação Técnica do Projeto
 Esta seção da Wiki se destina a pessoas que queiram reutilizar, total ou parcialmente, o seu programa. Portanto, ofereça todas as informações necessárias. Os três itens a seguir são os mais utilizados. Escolha com o(a) orientador(a) do projeto quais destes itens devem ser incluídos. Para cada item incluído, crie uma seção específica.

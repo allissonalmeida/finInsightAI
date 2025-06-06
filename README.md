@@ -1,15 +1,9 @@
-# Nome do Projeto Final de Programação 2025.1
+# FinInsight AI: Análise Inteligente de Relatórios Financeiros
 Wiki criado para apresentar informações sobre o projeto final de programação de software em 2025.1 do doutorado na PUC-Rio.
 
 # Breve Descrição
 
-Inclua na breve descrição as seguintes informações:
-
-a principal função de seu programa (e.g. gerenciador de datasets)
-exemplos de funções específicas relevantes que o programa oferece (e.g. criação, organização, manutenção, busca e recuperação de datasets)
-que usuário(s) o seu programa foi concebibo para atender primordialmente (e.g. pesquisadores especializados em [QUE ÁREA?], profissionais especializados em [QUE ÁREA?], professores [DE QUE DISCIPLINAS, EM QUE GRAU, ETC.], estudantes [DE QUE DISCIPLINAS, EM QUE GRAU, ETC.])
-a natureza do seu programa (e.g. prova (parcial ou completa) de conceito, ferramenta utilitária (acabada ou inacabada), módulo de sistema em desenvolvimento (por você ou por colaboradores)
-ressalvas, se houver (informe de maneira breve, porém clara, qualquer ressalva de uso de que os interessados em seu programa devem estar cientes)
+O FinInsight AI é uma plataforma de análise automatizada de relatórios financeiros trimestrais (em PDF) que integra técnicas de Recuperação Aumentada por Geração (RAG) e Modelos de Linguagem (LLMs). Sua principal função é extrair, processar e correlacionar dados quantitativos (balanços, indicadores) e qualitativos (textos explicativos) para gerar insights estratégicos, como tendências de mercado, riscos operacionais e oportunidades de investimento.
 
 # Visão de Projeto
 

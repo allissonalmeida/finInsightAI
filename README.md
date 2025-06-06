@@ -25,6 +25,7 @@ Uma gestora tenta analisar relatórios de uma empresa com PDFs digitalizados em 
 Um analista júnior insere um relatório com notas explicativas em espanhol, esperando análise profunda. O sistema, treinado principalmente em português, traduz automaticamente o texto, mas perde nuances técnicas específicas do mercado argentino. A ferramenta RAG recupera dados desatualizados de um banco de dados em português, levando a recomendações equivocadas sobre exposição ao risco-país. O usuário só percebe o erro ao comparar manualmente os resultados com fontes secundárias.
 
 # Documentação Técnica do Projeto
+
 Esta seção da Wiki se destina a pessoas que queiram reutilizar, total ou parcialmente, o seu programa. Portanto, ofereça todas as informações necessárias. Os três itens a seguir são os mais utilizados. Escolha com o(a) orientador(a) do projeto quais destes itens devem ser incluídos. Para cada item incluído, crie uma seção específica.
 
 Especificação de requisitos funcionais e não-funcionais do sotware

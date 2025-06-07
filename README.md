@@ -33,26 +33,26 @@ Esta seção oferece informações para desenvolvedores e colaboradores interess
 
 Requisitos Funcionais:
 
-F1.1: Upload de Documentos: O sistema deve permitir o upload de um ou múltiplos arquivos PDF de relatórios financeiros.
-F1.2: Extração de Conteúdo: O sistema deve extrair texto (quantitativo e qualitativo) dos PDFs carregados.
-F1.3: Geração de Embeddings: O sistema deve gerar representações vetoriais (embeddings) dos chunks de texto extraídos.
-F1.4: Armazenamento Vetorial: O sistema deve armazenar os embeddings em um banco de dados vetorial para busca eficiente.
-F1.5: Interface de Consulta: O sistema deve fornecer uma interface de texto para o usuário inserir perguntas em linguagem natural.
-F1.6: Recuperação de Contexto (Retrieval): O sistema deve recuperar os chunks de texto mais relevantes do banco de dados vetorial com base na pergunta do usuário.
-F1.7: Geração de Resposta (Generation): O sistema deve utilizar um LLM para gerar uma resposta concisa e relevante com base na pergunta do usuário e no contexto recuperado.
-F1.8: Citação de Fontes: A resposta gerada deve incluir referências aos documentos originais (nome do arquivo, número da página) de onde o contexto foi retirado.
-F1.9: Diagnóstico da API: O sistema deve verificar e exibir o status de conexão com a API Gemini e listar os modelos de chat e embedding disponíveis.
-F1.10: Seleção Automática de Modelo: O sistema deve selecionar automaticamente o modelo de LLM e Embedding mais adequado (priorizando gemini-1.5-flash-latest, gemini-1.5-flash, etc.).
+* F1.1: Upload de Documentos: O sistema deve permitir o upload de um ou múltiplos arquivos PDF de relatórios financeiros.
+* F1.2: Extração de Conteúdo: O sistema deve extrair texto (quantitativo e qualitativo) dos PDFs carregados.
+* F1.3: Geração de Embeddings: O sistema deve gerar representações vetoriais (embeddings) dos chunks de texto extraídos.
+* F1.4: Armazenamento Vetorial: O sistema deve armazenar os embeddings em um banco de dados vetorial para busca eficiente.
+* F1.5: Interface de Consulta: O sistema deve fornecer uma interface de texto para o usuário inserir perguntas em linguagem natural.
+* F1.6: Recuperação de Contexto (Retrieval): O sistema deve recuperar os chunks de texto mais relevantes do banco de dados vetorial com base na pergunta do usuário.
+* F1.7: Geração de Resposta (Generation): O sistema deve utilizar um LLM para gerar uma resposta concisa e relevante com base na pergunta do usuário e no contexto recuperado.
+* F1.8: Citação de Fontes: A resposta gerada deve incluir referências aos documentos originais (nome do arquivo, número da página) de onde o contexto foi retirado.
+* F1.9: Diagnóstico da API: O sistema deve verificar e exibir o status de conexão com a API Gemini e listar os modelos de chat e embedding disponíveis.
+* F1.10: Seleção Automática de Modelo: O sistema deve selecionar automaticamente o modelo de LLM e Embedding mais adequado (priorizando gemini-1.5-flash-latest, gemini-1.5-flash, etc.).
 
 Requisitos Não-Funcionais:
 
-NF2.1: Performance: O processamento de documentos e a geração de respostas devem ser eficientes, com tempos de resposta adequados para análises rápidas (idealmente segundos para perguntas).
-NF2.2: Escalabilidade: A arquitetura deve permitir o escalonamento para processar um número maior de documentos e atender a múltiplos usuários (considerando infraestrutura e cotas de API).
-NF2.3: Confiabilidade: O sistema deve ser robusto a falhas, com tratamento de erros adequado (ex: falha na API, documento corrompido).
-NF2.4: Segurança: A chave de API deve ser gerenciada de forma segura (utilizando st.secrets).
-NF2.5: Usabilidade: A interface do usuário deve ser intuitiva e fácil de usar para o público-alvo (analistas, gestores).
-NF2.6: Manutenibilidade: O código deve ser modular, bem comentado e fácil de entender e modificar para futuras atualizações.
-NF2.7: Adaptabilidade: A arquitetura deve ser flexível para integrar novos modelos de LLM e embeddings, bem como diferentes formatos de documentos, no futuro.
+* NF2.1: Performance: O processamento de documentos e a geração de respostas devem ser eficientes, com tempos de resposta adequados para análises rápidas (idealmente segundos para perguntas).
+* NF2.2: Escalabilidade: A arquitetura deve permitir o escalonamento para processar um número maior de documentos e atender a múltiplos usuários (considerando infraestrutura e cotas de API).
+* NF2.3: Confiabilidade: O sistema deve ser robusto a falhas, com tratamento de erros adequado (ex: falha na API, documento corrompido).
+* NF2.4: Segurança: A chave de API deve ser gerenciada de forma segura (utilizando st.secrets).
+* NF2.5: Usabilidade: A interface do usuário deve ser intuitiva e fácil de usar para o público-alvo (analistas, gestores).
+* NF2.6: Manutenibilidade: O código deve ser modular, bem comentado e fácil de entender e modificar para futuras atualizações.
+* NF2.7: Adaptabilidade: A arquitetura deve ser flexível para integrar novos modelos de LLM e embeddings, bem como diferentes formatos de documentos, no futuro.
 
 2. Descrição da Arquitetura do Software
 

@@ -65,46 +65,49 @@ Lida com a interação direta com o usuário.
 
 Camada de Processamento de Documentos:
 
-PyMuPDFLoader: Biblioteca utilizada para carregar e extrair texto de arquivos PDF.
-RecursiveCharacterTextSplitter (LangChain): Responsável por dividir o texto extraído em "chunks" (pedaços menores), otimizados para o processo de embedding e recuperação, com controle de chunk_size e chunk_overlap.
+* PyMuPDFLoader: Biblioteca utilizada para carregar e extrair texto de arquivos PDF.
+* RecursiveCharacterTextSplitter (LangChain): Responsável por dividir o texto extraído em "chunks" (pedaços menores), otimizados para o processo de embedding e recuperação, com controle de chunk_size e chunk_overlap.
+
 Camada de Embedding e Banco de Dados Vetorial:
 
-GoogleGenerativeAIEmbeddings (LangChain): Utiliza o modelo de embedding do Google Gemini (models/embedding-001 ou similar) para transformar os chunks de texto em vetores numéricos (embeddings).
-ChromaDB: Um banco de dados vetorial leve e persistente (chromadb.PersistentClient) utilizado para armazenar os embeddings e seus metadados. Permite buscas de similaridade vetorial eficientes.
+* GoogleGenerativeAIEmbeddings (LangChain): Utiliza o modelo de embedding do Google Gemini (models/embedding-001 ou similar) para transformar os chunks de texto em vetores numéricos (embeddings).
+* ChromaDB: Um banco de dados vetorial leve e persistente (chromadb.PersistentClient) utilizado para armazenar os embeddings e seus metadados. Permite buscas de similaridade vetorial eficientes.
+
 Camada de Modelo de Linguagem (LLM) e Orquestração RAG:
 
-ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini (ex: gemini-1.5-flash-latest) para a parte de geração de respostas.
+* ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini (ex: gemini-1.5-flash-latest) para a parte de geração de respostas.
+
 RetrievalQA (LangChain): A "cola" que orquestra o fluxo RAG:
 
-Recebe a pergunta do usuário.
-Transforma a pergunta em embedding.
-Usa o retriever (configurado para k=10) para buscar os 10 chunks mais semanticamente relevantes do ChromaDB.
-"Stuffa" (combina) esses chunks recuperados com a pergunta do usuário em um único prompt de contexto.
-Envia o prompt completo para o LLM.
-Recebe a resposta do LLM.
-Retorna a resposta (e as fontes, se disponíveis).
+* Recebe a pergunta do usuário.
+* Transforma a pergunta em embedding.
+* Usa o retriever (configurado para k=10) para buscar os 10 chunks mais semanticamente relevantes do ChromaDB.
+* "Stuffa" (combina) esses chunks recuperados com a pergunta do usuário em um único prompt de contexto.
+* Envia o prompt completo para o LLM.
+* Recebe a resposta do LLM.
+* Retorna a resposta (e as fontes, se disponíveis).
 
 Configuração de API:
 
-os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']: Gerencia a chave de API de forma segura através do Streamlit Secrets.
-google.generativeai.configure: Inicializa a API do Gemini.
-genai.list_models(): Usado para diagnosticar e selecionar dinamicamente os modelos disponíveis e adequados.
+* os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']: Gerencia a chave de API de forma segura através do Streamlit Secrets.
+* google.generativeai.configure: Inicializa a API do Gemini.
+* genai.list_models(): Usado para diagnosticar e selecionar dinamicamente os modelos disponíveis e adequados.
 
 3. Sobre o Código
 
 Linguagem de Programação: Python 3.x
 Framework Principal: Streamlit (para a interface web e gerenciamento de estado da aplicação).
+
 Bibliotecas Chave:
-langchain e langchain_community: Orquestração de LLMs, text splitting, loaders, e cadeia RAG.
-langchain_google_genai: Integração com os modelos Gemini (chat e embedding).
-chromadb: Banco de dados vetorial para armazenamento e busca de embeddings.
-PyMuPDFLoader: Loader de documentos PDF para extração de texto.
-os: Operações de sistema de arquivos (criação de diretórios, remoção de arquivos temporários).
-Comentários em Linha: O código é amplamente comentado para explicar as seções, a lógica de cada parte e os pontos-chave de configuração.
-Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI) para facilitar a compreensão e manutenção. Funções com @st.cache_data e @st.cache_resource são usadas para otimizar o desempenho do Streamlit, armazenando em cache os resultados de operações caras.
-Tratamento de Erros: Blocos try-except são utilizados para capturar e exibir erros críticos de inicialização da API, garantindo feedback imediato ao usuário.
-Manual de Utilização para Usuários Contemplados
-Este manual foi elaborado para analistas financeiros, gestores corporativos e consultores que desejam acelerar sua análise de relatórios financeiros usando o FinAI Insights.
+* langchain e langchain_community: Orquestração de LLMs, text splitting, loaders, e cadeia RAG.
+* langchain_google_genai: Integração com os modelos Gemini (chat e embedding).
+* chromadb: Banco de dados vetorial para armazenamento e busca de embeddings.
+* PyMuPDFLoader: Loader de documentos PDF para extração de texto.
+* os: Operações de sistema de arquivos (criação de diretórios, remoção de arquivos temporários).
+* Comentários em Linha: O código é amplamente comentado para explicar as seções, a lógica de cada parte e os pontos-chave de configuração.
+* Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI) para facilitar a compreensão e manutenção. Funções com @st.cache_data e @st.cache_resource são usadas * para otimizar o desempenho do Streamlit, armazenando em cache os resultados de operações caras.
+* Tratamento de Erros: Blocos try-except são utilizados para capturar e exibir erros críticos de inicialização da API, garantindo feedback imediato ao usuário.
+
 
 Guia de Instruções:
 
@@ -128,24 +131,21 @@ Exceções ou Potenciais Problemas:
 
 Se o aplicativo não iniciar ou exibir "ERRO CRÍTICO na inicialização da API Gemini":
 
-Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI" e a chave deve estar entre aspas). Verifique também sua conexão com a internet.
-É porque: A chave de API está inválida, expirada, não tem permissões para acessar os modelos Gemini, ou há um problema de conexão com o servidor do Google.
+* Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI" e a chave deve estar entre aspas). Verifique também sua conexão com a internet.
 
 Se o aplicativo carregar, mas a mensagem "Nenhum modelo de chat/embedding adequado foi encontrado" aparecer:
 
-Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. Pode ser necessário aguardar a disponibilização de modelos em sua região ou verificar as permissões da chave.
+* Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. Pode ser necessário aguardar a disponibilização de modelos em sua região ou verificar as permissões da chave.
 
-É porque: Sua chave de API não tem acesso aos modelos Gemini esperados (gemini-1.5-flash, gemini-pro, etc.) ou eles ainda não estão disponíveis em sua região/cota.
 
 Se o aplicativo disser "Nenhum texto útil foi extraído dos PDFs carregados":
-Então faça: Abra o PDF original e tente selecionar o texto dentro dele. Se você não conseguir selecionar o texto (ou seja, ele é uma imagem), o aplicativo não conseguirá ler o conteúdo.
-É porque: O PDF é uma imagem (um PDF "escaneado") e não contém uma camada de texto selecionável, que é essencial para a extração de conteúdo.
+
+* Então faça: Abra o PDF original e tente selecionar o texto dentro dele. Se você não conseguir selecionar o texto (ou seja, ele é uma imagem), o aplicativo não conseguirá ler o conteúdo.
 
 Se a resposta para sua pergunta for "Não há informações sobre X nos textos fornecidos" ou similar:
-Então faça: Abra o documento PDF original e procure manualmente pela informação. Se a informação não estiver no documento, a resposta do modelo está correta. Se a informação estiver lá, tente reformular sua pergunta ou dividi-la em partes menores e mais específicas.
-É porque: A informação específica não está contida nos documentos carregados, ou a forma como a informação está escrita no documento não foi semanticamente relacionada à sua pergunta pelo modelo de embedding, ou está fragmentada em muitos chunks.
+
+* Então faça: Abra o documento PDF original e procure manualmente pela informação. Se a informação não estiver no documento, a resposta do modelo está correta. Se a informação estiver lá, tente reformular sua pergunta ou dividi-la em partes menores e mais específicas.
 
 Se a resposta for imprecisa ou incompleta, mas a informação está no documento:
 
-Então faça: Tente reformular a pergunta com mais detalhes ou de forma diferente.
-É porque: A complexidade da pergunta, a forma como a informação está distribuída nos chunks, ou a interpretação do LLM podem ter levado a uma resposta não ideal. Aumentar o k no retriever (como já fizemos para k=10) ajuda, mas algumas informações podem exigir um prompt mais direcionado ou um contexto mais amplo.
+* Então faça: Tente reformular a pergunta com mais detalhes ou de forma diferente.

@@ -113,19 +113,17 @@ Guia de Instruções:
 
 Para Analisar um Novo Relatório Financeiro (PDF):
 
-Passo 1: Iniciar o Aplicativo: Abra seu terminal e navegue até a pasta onde o arquivo mainFinGemini.py está salvo. Execute o comando: streamlit run mainFinGemini.py. O aplicativo será aberto automaticamente no seu navegador.
-Passo 2: Verificar Status da API (Opcional, mas recomendado): No topo da página, clique em "Verificar Detalhes dos Modelos Gemini Encontrados" para expandir a seção. Verifique se os modelos de chat e embedding foram selecionados com sucesso. Se houver mensagens de erro críticas aqui, resolva-as antes de prosseguir (geralmente relacionadas à GOOGLE_API_KEY).
-Passo 3: Carregar os Relatórios: Localize a seção "Carregue seus Relatórios Financeiros (PDF)". Clique no botão "Browse files" ou arraste e solte um ou mais arquivos PDF para a área indicada.
-Passo 4: Aguardar o Processamento: Após carregar os arquivos, o aplicativo exibirá um spinner "Processando relatórios e preparando para análise..." e depois "Configurando o banco de dados vetorial...". Aguarde até que a mensagem "✅ Relatórios processados e prontos para consulta!" apareça. Isso indica que o documento foi lido, dividido em chunks e armazenado no banco de dados vetorial.
+* Passo 1: Iniciar o Aplicativo: Abra seu terminal e navegue até a pasta onde o arquivo mainFinGemini.py está salvo. Execute o comando: streamlit run mainFinGemini.py. O aplicativo será aberto automaticamente no seu navegador.
+* Passo 2: Verificar Status da API (Opcional, mas recomendado): No topo da página, clique em "Verificar Detalhes dos Modelos Gemini Encontrados" para expandir a seção. Verifique se os modelos de chat e embedding foram selecionados com sucesso. Se houver mensagens de erro críticas aqui, resolva-as antes de prosseguir (geralmente relacionadas à GOOGLE_API_KEY).
+* Passo 3: Carregar os Relatórios: Localize a seção "Carregue seus Relatórios Financeiros (PDF)". Clique no botão "Browse files" ou arraste e solte um ou mais arquivos PDF para a área indicada.
+* Passo 4: Aguardar o Processamento: Após carregar os arquivos, o aplicativo exibirá um spinner "Processando relatórios e preparando para análise..." e depois "Configurando o banco de dados vetorial...". Aguarde até que a mensagem "✅ Relatórios processados e prontos para consulta!" apareça. Isso indica que o documento foi lido, dividido em chunks e armazenado no banco de dados vetorial.
 
 Para Obter Insights Financeiros Fazendo Perguntas:
 
-Passo 1: Acessar a Área de Pergunta: Após os documentos serem processados (Passo 4 da seção anterior), a seção "Pergunte aos Seus Relatórios Financeiros" será exibida.
-Passo 2: Formular sua Pergunta: Na caixa de texto, digite sua pergunta em linguagem natural sobre o conteúdo dos relatórios carregados.
-Dica: Seja específico com o que você procura (ex: "Qual o lucro líquido da empresa X no ano fiscal de 2023?"). Você pode usar o botão "Exemplos de Perguntas" para ideias.
-Restrição: O modelo responderá apenas com base nas informações encontradas nos documentos fornecidos.
-Passo 3: Obter a Resposta: Clique no botão "Obter Insights Financeiros". O aplicativo exibirá um spinner "Buscando e gerando insights...".
-Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados". Abaixo da resposta, você encontrará a seção "Documentos de Referência", indicando o nome do arquivo e a página de onde a informação foi extraída, permitindo que você verifique a fonte original.
+* Passo 1: Acessar a Área de Pergunta: Após os documentos serem processados (Passo 4 da seção anterior), a seção "Pergunte aos Seus Relatórios Financeiros" será exibida.
+* Passo 2: Formular sua Pergunta: Na caixa de texto, digite sua pergunta em linguagem natural sobre o conteúdo dos relatórios carregados.
+* Passo 3: Obter a Resposta: Clique no botão "Obter Insights Financeiros". O aplicativo exibirá um spinner "Buscando e gerando insights...".
+* Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados". Abaixo da resposta, você encontrará a seção "Documentos de Referência", indicando o nome do arquivo e a página de onde a informação foi extraída, permitindo que você verifique a fonte original.
 
 Exceções ou Potenciais Problemas:
 

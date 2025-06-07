@@ -77,7 +77,7 @@ Camada de Modelo de Linguagem (LLM) e Orquestração RAG:
 
 * ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini (ex: gemini-1.5-flash-latest) para a parte de geração de respostas.
 
-RetrievalQA (LangChain): A "cola" que orquestra o fluxo RAG:
+RetrievalQA (LangChain) que orquestra o fluxo RAG:
 
 * Recebe a pergunta do usuário.
 * Transforma a pergunta em embedding.

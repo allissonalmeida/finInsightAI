@@ -37,21 +37,21 @@ Requisitos Funcionais:
 * F1.3: Geração de Embeddings: O sistema deve gerar representações vetoriais (embeddings) dos chunks de texto extraídos.
 * F1.4: Armazenamento Vetorial: O sistema deve armazenar os embeddings em um banco de dados vetorial para busca eficiente.
 * F1.5: Interface de Consulta: O sistema deve fornecer uma interface de texto para o usuário inserir perguntas em linguagem natural.
-* F1.6: Recuperação de Contexto (Retrieval): O sistema deve recuperar os chunks de texto mais relevantes do banco de dados vetorial com base na pergunta do usuário.
-* F1.7: Geração de Resposta (Generation): O sistema deve utilizar um LLM para gerar uma resposta concisa e relevante com base na pergunta do usuário e no contexto recuperado.
+* F1.6: Recuperação de Contexto: O sistema deve recuperar os chunks de texto mais relevantes do banco de dados vetorial com base na pergunta do usuário.
+* F1.7: Geração de Resposta: O sistema deve utilizar um LLM para gerar uma resposta concisa e relevante com base na pergunta do usuário e no contexto recuperado.
 * F1.8: Citação de Fontes: A resposta gerada deve incluir referências aos documentos originais (nome do arquivo, número da página) de onde o contexto foi retirado.
 * F1.9: Diagnóstico da API: O sistema deve verificar e exibir o status de conexão com a API Gemini e listar os modelos de chat e embedding disponíveis.
-* F1.10: Seleção Automática de Modelo: O sistema deve selecionar automaticamente o modelo de LLM e Embedding mais adequado (priorizando gemini-1.5-flash-latest, gemini-1.5-flash, etc.).
+* F1.10: Seleção Automática de Modelo: O sistema deve selecionar automaticamente o modelo de LLM e Embedding mais adequado.
 
 Requisitos Não-Funcionais:
 
-* NF2.1: Performance: O processamento de documentos e a geração de respostas devem ser eficientes, com tempos de resposta adequados para análises rápidas (idealmente segundos para perguntas).
-* NF2.2: Escalabilidade: A arquitetura deve permitir o escalonamento para processar um número maior de documentos e atender a múltiplos usuários (considerando infraestrutura e cotas de API).
-* NF2.3: Confiabilidade: O sistema deve ser robusto a falhas, com tratamento de erros adequado (ex: falha na API, documento corrompido).
-* NF2.4: Segurança: A chave de API deve ser gerenciada de forma segura (utilizando st.secrets).
-* NF2.5: Usabilidade: A interface do usuário deve ser intuitiva e fácil de usar para o público-alvo (analistas, gestores).
+* NF2.1: Performance: O processamento de documentos e a geração de respostas devem ser eficientes, com tempos de resposta adequados para análises rápidas.
+* NF2.2: Escalabilidade: A arquitetura deve permitir o escalonamento para processar um número maior de documentos e atender a múltiplos usuários.
+* NF2.3: Confiabilidade: O sistema deve ser robusto a falhas, com tratamento de erros adequado.
+* NF2.4: Segurança: A chave de API deve ser gerenciada de forma segura.
+* NF2.5: Usabilidade: A interface do usuário deve ser intuitiva e fácil de usar para o público-alvo.
 * NF2.6: Manutenibilidade: O código deve ser modular, bem comentado e fácil de entender e modificar para futuras atualizações.
-* NF2.7: Adaptabilidade: A arquitetura deve ser flexível para integrar novos modelos de LLM e embeddings, bem como diferentes formatos de documentos, no futuro.
+* NF2.7: Adaptabilidade: A arquitetura deve ser flexível para integrar novos modelos de LLM e embeddings, bem como diferentes formatos de documentos.
 
 2. Descrição da Arquitetura do Software
 
@@ -59,25 +59,24 @@ O FinAI Insights segue uma arquitetura baseada em Retrieval Augmented Generation
 
 Camada de Interface (Frontend):
 
-Desenvolvida com Streamlit, que fornece a interface de usuário interativa (upload de arquivos, caixa de texto para perguntas, exibição de respostas e diagnósticos).
-Lida com a interação direta com o usuário.
+Desenvolvida com Streamlit, fornece interface de usuário interativa (upload de arquivos, caixa de texto para perguntas, exibição de respostas e diagnósticos).
 
 Camada de Processamento de Documentos:
 
 * PyMuPDFLoader: Biblioteca utilizada para carregar e extrair texto de arquivos PDF.
-* RecursiveCharacterTextSplitter (LangChain): Responsável por dividir o texto extraído em "chunks" (pedaços menores), otimizados para o processo de embedding e recuperação, com controle de chunk_size e chunk_overlap.
+* RecursiveCharacterTextSplitter (LangChain): Responsável por dividir o texto extraído em "chunks", otimiza o processo de embedding e recuperação, com controle de chunk_size e chunk_overlap.
 
 Camada de Embedding e Banco de Dados Vetorial:
 
-* GoogleGenerativeAIEmbeddings (LangChain): Utiliza o modelo de embedding do Google Gemini (models/embedding-001 ou similar) para transformar os chunks de texto em vetores numéricos (embeddings).
+* GoogleGenerativeAIEmbeddings: Utiliza o modelo de embedding do Google Gemini (models/embedding-001 ou similar) para transformar os chunks de texto em vetores numéricos (embeddings).
 * ChromaDB: Um banco de dados vetorial leve e persistente (chromadb.PersistentClient) utilizado para armazenar os embeddings e seus metadados.
 
   
 Camada de Modelo de Linguagem (LLM) e Orquestração RAG:
 
-* ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini (ex: gemini-1.5-flash-latest) para a parte de geração de respostas.
+* ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini para a parte de geração de respostas.
 
-RetrievalQA (LangChain) que orquestra o fluxo RAG:
+RetrievalQA que orquestra o fluxo RAG:
 
 * Recebe a pergunta do usuário.
 * Transforma a pergunta em embedding.
@@ -96,16 +95,17 @@ Configuração de API:
 3. Sobre o Código
 
 Linguagem de Programação: Python 3.x
-Framework Principal: Streamlit (para a interface web e gerenciamento de estado da aplicação).
+Framework Principal: Streamlit.
 
 Bibliotecas Chave:
+
 * langchain e langchain_community: Orquestração de LLMs, text splitting, loaders, e cadeia RAG.
 * langchain_google_genai: Integração com os modelos Gemini (chat e embedding).
 * chromadb: Banco de dados vetorial para armazenamento e busca de embeddings.
 * PyMuPDFLoader: Loader de documentos PDF para extração de texto.
 * os: Operações de sistema de arquivos (criação de diretórios, remoção de arquivos temporários).
 * Comentários em Linha: O código é amplamente comentado para explicar as seções, a lógica de cada parte e os pontos-chave de configuração.
-* Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI) para facilitar a compreensão e manutenção. 
+* Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI). 
 * Tratamento de Erros: Blocos try-except são utilizados para capturar e exibir erros críticos de inicialização da API, garantindo feedback imediato ao usuário.
 
 
@@ -128,22 +128,17 @@ Para Obter Insights Financeiros Fazendo Perguntas:
 Exceções ou Potenciais Problemas:
 
 Se o aplicativo não iniciar ou exibir "ERRO CRÍTICO na inicialização da API Gemini":
-
 * Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI".
 
 Se o aplicativo carregar, mas a mensagem "Nenhum modelo de chat/embedding adequado foi encontrado" aparecer:
-
 * Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. 
 
 
 Se o aplicativo disser "Nenhum texto útil foi extraído dos PDFs carregados":
-
 * Então faça: Abra o PDF original e tente selecionar o texto dentro dele. Se você não conseguir selecionar o texto (ou seja, ele é uma imagem), o aplicativo não conseguirá ler o conteúdo.
 
 Se a resposta para sua pergunta for "Não há informações sobre X nos textos fornecidos" ou similar:
-
 * Então faça: Abra o documento PDF original e procure manualmente pela informação. Se a informação não estiver no documento, a resposta do modelo está correta. Se a informação estiver lá, tente reformular sua pergunta ou dividi-la em partes menores e mais específicas.
 
 Se a resposta for imprecisa ou incompleta, mas a informação está no documento:
-
 * Então faça: Tente reformular a pergunta com mais detalhes ou de forma diferente.

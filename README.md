@@ -9,21 +9,20 @@ O FinInsight AI é uma plataforma de análise automatizada de relatórios financ
 
 # Cenário Positivo 1 (i.e. cenário que dá certo)
 
-Maria é analista financeira júnior em uma consultoria. Ela precisa preparar um resumo rápido sobre a saúde financeira de uma nova empresa cliente em menos de uma hora. Ela acessa o FinAI Insights, carrega o último relatório trimestral em PDF da empresa. Após o processamento (que leva menos de um minuto), Maria digita a pergunta: "Qual foi o lucro líquido da empresa no último trimestre e como ele se compara ao trimestre anterior?". O sistema responde prontamente com os valores exatos e a comparação, citando as páginas do relatório de onde a informação foi extraída. Em seguida, Maria pergunta: "Quais foram os principais custos operacionais detalhados no relatório?". O FinAI Insights lista os maiores itens de custo, permitindo que Maria entenda rapidamente as despesas da empresa sem ter que navegar manualmente por dezenas de páginas. Ela consegue compilar o resumo para seu gerente a tempo, impressionando com a velocidade e a precisão da sua análise.
+Maria, uma analista financeira, usa o FinAI Insights para rapidamente extrair o lucro líquido e os custos operacionais de um relatório trimestral em PDF. O sistema processa o documento, responde com precisão e cita as fontes, permitindo que Maria crie um resumo rápido e detalhado para seu gerente.
 
 # Cenário Positivo 2
 
-João é um gestor de riscos em uma grande corporação. Ele precisa identificar rapidamente os principais riscos operacionais mencionados nos relatórios anuais de todas as subsidiárias do grupo. Ele acessa o FinAI Insights, carrega os PDFs de cinco relatórios anuais simultaneamente. Após o processamento, ele faz a pergunta: "Com base nos relatórios, quais são os três principais riscos operacionais identificados pela gestão em 2023 para cada subsidiária?". O FinAI Insights varre os documentos e apresenta uma lista concisa dos riscos para cada empresa, com referências às seções originais. João consegue consolidar essas informações em um relatório de riscos do grupo em poucas horas, um trabalho que levaria dias se feito manualmente, garantindo que nenhum risco crítico seja negligenciado.
+João, um gestor de riscos, carrega múltiplos relatórios anuais de subsidiárias no FinAI Insights. Ele pergunta sobre riscos operacionais e o sistema apresenta uma lista concisa e referenciada para cada empresa, agilizando significativamente a consolidação de relatórios de risco.
+
 
 # Cenário Negativo 1 (i.e. cenário que expõe uma limitação conhecida e esperada do programa)
 
-Ana, uma estudante de finanças, está usando o FinAI Insights para pesquisar sobre o endividamento de pequenas e médias empresas. Ela carrega um relatório financeiro de uma startup, esperando encontrar detalhes sobre a estrutura da dívida. Ela pergunta: "Qual o detalhamento dos empréstimos bancários de longo prazo?". O sistema retorna com a mensagem: "Não há informações detalhadas sobre empréstimos bancários de longo prazo nos textos fornecidos." Ana, frustrada, verifica o PDF original e percebe que, de fato, o relatório da startup é muito sucinto e não detalha os empréstimos além de um valor total genérico. Ela entende que a limitação não é do sistema, mas da falta de granularidade da informação no documento fonte.
-
+Ana, uma estudante, busca detalhes de empréstimos em um relatório, mas o FinAI Insights informa que a informação não está presente no documento. Ana verifica o PDF e confirma a ausência da granularidade esperada, compreendendo que a limitação é do conteúdo da fonte, não do sistema.
 
 # Cenário Negativo 2
 
-Carlos, um consultor, está analisando um relatório financeiro digitalizado de uma empresa mais antiga, onde algumas tabelas e gráficos foram inseridos como imagens, e não como texto selecionável. Ele carrega o PDF no FinAI Insights e tenta perguntar: "Qual o valor do EBITDA para os anos de 2020 a 2022, conforme a tabela de resultados?". O sistema retorna uma resposta imprecisa ou afirma que não encontrou a informação, mesmo que a tabela esteja visivelmente no documento. Carlos então tenta perguntar sobre um parágrafo textual logo abaixo da tabela e o sistema responde corretamente. Ele percebe que o problema é a incapacidade do sistema de ler dados de imagens dentro do PDF, uma limitação conhecida da extração de texto para modelos de RAG que dependem de OCR externo ou texto nativo.
-
+Carlos, um consultor, tenta extrair dados de uma tabela em um PDF antigo, mas o FinAI Insights não consegue. Ele percebe que a tabela é uma imagem e não texto selecionável, o que impede a extração de dados pelo sistema, revelando uma limitação na leitura de PDFs não textuais.
 
 # Documentação Técnica do Projeto
 

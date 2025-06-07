@@ -71,8 +71,9 @@ Camada de Processamento de Documentos:
 Camada de Embedding e Banco de Dados Vetorial:
 
 * GoogleGenerativeAIEmbeddings (LangChain): Utiliza o modelo de embedding do Google Gemini (models/embedding-001 ou similar) para transformar os chunks de texto em vetores numéricos (embeddings).
-* ChromaDB: Um banco de dados vetorial leve e persistente (chromadb.PersistentClient) utilizado para armazenar os embeddings e seus metadados. Permite buscas de similaridade vetorial eficientes.
+* ChromaDB: Um banco de dados vetorial leve e persistente (chromadb.PersistentClient) utilizado para armazenar os embeddings e seus metadados.
 
+  
 Camada de Modelo de Linguagem (LLM) e Orquestração RAG:
 
 * ChatGoogleGenerativeAI (LangChain): Interface para o modelo de linguagem grande (LLM) do Google Gemini (ex: gemini-1.5-flash-latest) para a parte de geração de respostas.
@@ -105,7 +106,7 @@ Bibliotecas Chave:
 * PyMuPDFLoader: Loader de documentos PDF para extração de texto.
 * os: Operações de sistema de arquivos (criação de diretórios, remoção de arquivos temporários).
 * Comentários em Linha: O código é amplamente comentado para explicar as seções, a lógica de cada parte e os pontos-chave de configuração.
-* Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI) para facilitar a compreensão e manutenção. Funções com @st.cache_data e @st.cache_resource são usadas * para otimizar o desempenho do Streamlit, armazenando em cache os resultados de operações caras.
+* Estrutura Modular: O código é dividido em seções lógicas (Configuração, Diagnóstico, Carregamento/Processamento, Embeddings/Vector Store, LLM, UI) para facilitar a compreensão e manutenção. 
 * Tratamento de Erros: Blocos try-except são utilizados para capturar e exibir erros críticos de inicialização da API, garantindo feedback imediato ao usuário.
 
 
@@ -113,27 +114,27 @@ Guia de Instruções:
 
 Para Analisar um Novo Relatório Financeiro (PDF):
 
-* Passo 1: Iniciar o Aplicativo: Abra seu terminal e navegue até a pasta onde o arquivo mainFinGemini.py está salvo. Execute o comando: streamlit run mainFinGemini.py. O aplicativo será aberto automaticamente no seu navegador.
-* Passo 2: Verificar Status da API (Opcional, mas recomendado): No topo da página, clique em "Verificar Detalhes dos Modelos Gemini Encontrados" para expandir a seção. Verifique se os modelos de chat e embedding foram selecionados com sucesso. Se houver mensagens de erro críticas aqui, resolva-as antes de prosseguir (geralmente relacionadas à GOOGLE_API_KEY).
+* Passo 1: Iniciar o Aplicativo: Abra seu terminal e navegue até a pasta onde o arquivo mainFinGemini.py está salvo. Execute o comando: streamlit run mainFinGemini.py.
+* Passo 2: Verificar Status da API (Opcional, mas recomendado): No topo da página, clique em "Verificar Detalhes dos Modelos Gemini Encontrados" para expandir a seção. Verifique se os modelos de chat e embedding foram selecionados com sucesso.
 * Passo 3: Carregar os Relatórios: Localize a seção "Carregue seus Relatórios Financeiros (PDF)". Clique no botão "Browse files" ou arraste e solte um ou mais arquivos PDF para a área indicada.
-* Passo 4: Aguardar o Processamento: Após carregar os arquivos, o aplicativo exibirá um spinner "Processando relatórios e preparando para análise..." e depois "Configurando o banco de dados vetorial...". Aguarde até que a mensagem "✅ Relatórios processados e prontos para consulta!" apareça. Isso indica que o documento foi lido, dividido em chunks e armazenado no banco de dados vetorial.
+* Passo 4: Aguardar o Processamento: Após carregar os arquivos, o aplicativo exibirá um spinner "Processando relatórios e preparando para análise..." e depois "Configurando o banco de dados vetorial...". 
 
 Para Obter Insights Financeiros Fazendo Perguntas:
 
-* Passo 1: Acessar a Área de Pergunta: Após os documentos serem processados (Passo 4 da seção anterior), a seção "Pergunte aos Seus Relatórios Financeiros" será exibida.
+* Passo 1: Acessar a Área de Pergunta: Após os documentos serem processados, a seção "Pergunte aos Seus Relatórios Financeiros" será exibida.
 * Passo 2: Formular sua Pergunta: Na caixa de texto, digite sua pergunta em linguagem natural sobre o conteúdo dos relatórios carregados.
 * Passo 3: Obter a Resposta: Clique no botão "Obter Insights Financeiros". O aplicativo exibirá um spinner "Buscando e gerando insights...".
-* Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados". Abaixo da resposta, você encontrará a seção "Documentos de Referência", indicando o nome do arquivo e a página de onde a informação foi extraída, permitindo que você verifique a fonte original.
+* Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados".
 
 Exceções ou Potenciais Problemas:
 
 Se o aplicativo não iniciar ou exibir "ERRO CRÍTICO na inicialização da API Gemini":
 
-* Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI" e a chave deve estar entre aspas). Verifique também sua conexão com a internet.
+* Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI".
 
 Se o aplicativo carregar, mas a mensagem "Nenhum modelo de chat/embedding adequado foi encontrado" aparecer:
 
-* Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. Pode ser necessário aguardar a disponibilização de modelos em sua região ou verificar as permissões da chave.
+* Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. 
 
 
 Se o aplicativo disser "Nenhum texto útil foi extraído dos PDFs carregados":

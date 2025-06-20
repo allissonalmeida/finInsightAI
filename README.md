@@ -141,7 +141,7 @@ Se a resposta for imprecisa ou incompleta, mas a informação está no documento
 
 * Passo 1: Faça o download do projeto;
 * Passo 2: Crie uma virtualenv para isolar as dependências do projeto;
-* Passo 3: Instale todas as dependencias do projetos utilizando o arquivo requirements.txt, para tanto utilize o comando pip install -r requirements.txt;
+* Passo 3: Instale todas as dependencias do projetos utilizando o arquivo requirements.txt, para tanto utilize o comando pip install -r requirements.txt; e
 * Passo 4: Agora com todas a infraestrutura instalada, execute o comando streamlit run main.py.
 
 

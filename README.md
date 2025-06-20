@@ -139,6 +139,12 @@ Se o aplicativo disser "Nenhum texto útil foi extraído dos PDFs carregados":
 
 Se a resposta para sua pergunta for "Não há informações sobre X nos textos fornecidos" ou similar:
 * Então faça: Abra o documento PDF original e procure manualmente pela informação. Se a informação não estiver no documento, a resposta do modelo está correta. Se a informação estiver lá, tente reformular sua pergunta ou dividi-la em partes menores e mais específicas.
+* 
+
+
+# FinInsight AI: Análise Inteligente de Relatórios Financeiros
+
+* Para acesso da versão de teste acesse: https://fininsightai.streamlit.app/
 
 Se a resposta for imprecisa ou incompleta, mas a informação está no documento:
 * Então faça: Tente reformular a pergunta com mais detalhes ou de forma diferente.

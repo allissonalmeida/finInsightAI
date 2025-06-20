@@ -117,6 +117,7 @@ Para Obter Insights Financeiros Fazendo Perguntas:
 * Passo 2: Formular sua Pergunta: Na caixa de texto, digite sua pergunta em linguagem natural sobre o conteúdo dos relatórios carregados.
 * Passo 3: Obter a Resposta: Clique no botão "Obter Insights Financeiros". O aplicativo exibirá um spinner "Buscando e gerando insights...".
 * Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados".
+  
 
 Exceções:
 
@@ -135,5 +136,12 @@ Se a resposta for imprecisa ou incompleta, mas a informação está no documento
 
 # Acesso a versão da aplicação de teste FinInsight AI
 * Para acesso da versão de teste acesse: https://fininsightai.streamlit.app/
+
+# Guia de Instruções de Instalação localmente do projeto:
+
+* Passo 1: Faça o download do projeto;
+* Passo 2: Crie uma virtualenv para isolar as dependências do projeto;
+* Passo 3: Instale todas as dependencias do projetos utilizando o arquivo requirements.txt, para tanto utilize o comando pip install -r requirements.txt;
+* Passo 4: Agora com todas a infraestrutura instalada, execute o comando streamlit run main.py.
 
 

@@ -1,4 +1,6 @@
 streamlit
+chromadb
+pysqlite3-binary
 langchain>=0.2.0
 langchain-core
 langchain-community
@@ -7,6 +9,7 @@ langchain-google-genai
 pinecone
 PyMuPDF
 PyYAML
+faiss-cpu
 sentence-transformers
 google-ai-generativelanguage==0.6.15
 google-api-core==2.25.0

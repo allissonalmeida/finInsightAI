@@ -383,16 +383,16 @@ if vector_store and llm:
         key="query_input"
     )
 
-    col_btn_examples, col_btn_search = st.columns([1, 4])
+    col_btn_examples, col_btn_search = st.columns([1, 1])
 
-    with col_btn_examples:
-        if st.button("Exemplos de Perguntas", key="show_examples"):
-            st.markdown("""
-            - Qual foi a receita total da empresa X no ano fiscal de 2023?
-            - Cite os principais investimentos em P&D para o próximo ano.
-            - Quais foram os fatores que impulsionaram o crescimento do lucro líquido no último trimestre?
-            - Há menção de planos de expansão para novos mercados? Quais?
-            """)
+    # with col_btn_examples:
+    #     if st.button("Exemplos de Perguntas", key="show_examples"):
+    #         st.markdown("""
+    #         - Qual foi a receita total da empresa X no ano fiscal de 2023?
+    #         - Cite os principais investimentos em P&D para o próximo ano.
+    #         - Quais foram os fatores que impulsionaram o crescimento do lucro líquido no último trimestre?
+    #         - Há menção de planos de expansão para novos mercados? Quais?
+    #         """)
 
     with col_btn_search:
         buscar = st.button("Obter Insights Financeiros", key="search_button")

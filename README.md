@@ -111,13 +111,6 @@ Bibliotecas Chave:
 
 Guia de Instruções:
 
-Para Analisar um Novo Relatório Financeiro (PDF):
-
-* Passo 1: Iniciar o Aplicativo: Abra seu terminal e navegue até a pasta onde o arquivo mainFinGemini.py está salvo. Execute o comando: streamlit run mainFinGemini.py.
-* Passo 2: Verificar Status da API (Opcional, mas recomendado): No topo da página, clique em "Verificar Detalhes dos Modelos Gemini Encontrados" para expandir a seção. Verifique se os modelos de chat e embedding foram selecionados com sucesso.
-* Passo 3: Carregar os Relatórios: Localize a seção "Carregue seus Relatórios Financeiros (PDF)". Clique no botão "Browse files" ou arraste e solte um ou mais arquivos PDF para a área indicada.
-* Passo 4: Aguardar o Processamento: Após carregar os arquivos, o aplicativo exibirá um spinner "Processando relatórios e preparando para análise..." e depois "Configurando o banco de dados vetorial...". 
-
 Para Obter Insights Financeiros Fazendo Perguntas:
 
 * Passo 1: Acessar a Área de Pergunta: Após os documentos serem processados, a seção "Pergunte aos Seus Relatórios Financeiros" será exibida.
@@ -125,27 +118,22 @@ Para Obter Insights Financeiros Fazendo Perguntas:
 * Passo 3: Obter a Resposta: Clique no botão "Obter Insights Financeiros". O aplicativo exibirá um spinner "Buscando e gerando insights...".
 * Passo 4: Analisar os Insights e Fontes: A resposta do modelo aparecerá na seção "Insights Gerados".
 
-Exceções ou Potenciais Problemas:
+Exceções:
 
 Se o aplicativo não iniciar ou exibir "ERRO CRÍTICO na inicialização da API Gemini":
-* Então faça: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI".
+* Solução: Verifique novamente se sua GOOGLE_API_KEY está corretamente configurada no arquivo .streamlit/secrets.toml (deve ser GOOGLE_API_KEY = "SUA_CHAVE_AQUI".
 
 Se o aplicativo carregar, mas a mensagem "Nenhum modelo de chat/embedding adequado foi encontrado" aparecer:
-* Então faça: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. 
-
+* Solução: Verifique a saída expandida de "Verificar Detalhes dos Modelos Gemini Encontrados" para ver quais modelos sua API está listando. 
 
 Se o aplicativo disser "Nenhum texto útil foi extraído dos PDFs carregados":
-* Então faça: Abra o PDF original e tente selecionar o texto dentro dele. Se você não conseguir selecionar o texto (ou seja, ele é uma imagem), o aplicativo não conseguirá ler o conteúdo.
-
-Se a resposta para sua pergunta for "Não há informações sobre X nos textos fornecidos" ou similar:
-* Então faça: Abra o documento PDF original e procure manualmente pela informação. Se a informação não estiver no documento, a resposta do modelo está correta. Se a informação estiver lá, tente reformular sua pergunta ou dividi-la em partes menores e mais específicas.
+* Solução: Abra o PDF original e tente selecionar o texto dentro dele. Se você não conseguir selecionar o texto (ou seja, ele é uma imagem), o aplicativo não conseguirá ler o conteúdo.
 
 Se a resposta for imprecisa ou incompleta, mas a informação está no documento:
-* Então faça: Tente reformular a pergunta com mais detalhes ou de forma diferente.
+* Solução: Tente reformular a pergunta com mais detalhes ou de forma diferente.
 
 
 # Acesso a versão da aplicação de teste FinInsight AI
-
 * Para acesso da versão de teste acesse: https://fininsightai.streamlit.app/
 
 

@@ -94,8 +94,8 @@ Configuração de API:
 
 3. Sobre o Código
 
-Linguagem de Programação: Python 3.x
-Framework Principal: Streamlit.
+* Linguagem de Programação: Python 3.10.X
+* Framework Principal: Streamlit.
 
 Bibliotecas Chave:
 
